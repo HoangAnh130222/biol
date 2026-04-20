@@ -5,12 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bio Matcha Latte</title>
 <link rel="stylesheet" href="webmeji.css">
-  <!-- Thêm ruồi -->
-<script src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js'></script>
-<script src='https://dembuon.vn/lib/flies/flier.js' type='text/javascript' var_1='true' var_2='true' var_3='false' var_4='1'></script>
-   <!-- Thêm ruồi -->
-<script type="text/javascript" var_1="true" var_2="false" var_3="false" var_4="80" src="https://static1.fshare.vn/js/flies-obj-2.1.js?v=f596f1d8"></script>
-<!-- Hết ruồi -->
+
    <style>
         @import url('https://fonts.googleapis.com/css2?family=Lexend:wght@700;900&display=swap');
 
@@ -19,7 +14,7 @@
             padding: 0;
             font-family: 'Lexend', sans-serif;
             /* CHÈN LINK GIF MÀU CAM CỦA BẠN VÀO ĐÂY */
-            background: url('https://usagif.com/wp-content/uploads/gif/anime-sleep-31.gif') no-repeat center center fixed;
+            background: url('https://i.pinimg.com/736x/b8/28/93/b828935c41b0d8a3342bb0c8347b64e0.jpg') no-repeat center center fixed;
             background-size: cover;
             display: flex;
             justify-content: center;
@@ -29,75 +24,124 @@
         }
 
         /* BẢNG TRONG SUỐT TÔNG CAM NHẠT */
-        .bio-card {
-            background: rgba(255, 245, 230, 0.25); /* Trắng kem hơi hướng cam */
-            backdrop-filter: blur(15px);
-            -webkit-backdrop-filter: blur(15px);
-            border: 2px solid rgba(255, 255, 255, 0.5);
-            border-radius: 40px;
-            padding: 40px 25px;
-            width: 100%;
-            max-width: 350px;
-            text-align: center;
-            box-shadow: 0 15px 40px rgba(230, 126, 34, 0.3);
-        }
+    .bio-card {
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    width: 90%;
+    max-width: 320px;
+    text-align: center;
+    /* Thêm transition ở đây để các thay đổi bên trong mượt hơn */
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+/* Làm cho cụm icon mạng xã hội cũng trong suốt theo */
+.social-icons {
+    background: rgba(255, 255, 255, 0.05) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+       .avatar-top {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    margin: 0 auto 20px;
+    /* Làm viền mờ đi hoặc xóa hẳn */
+    border: 2px solid rgba(255, 255, 255, 0.3); 
+    overflow: hidden;
+    /* Xóa đổ bóng đen để không bị đục */
+    box-shadow: none; 
+    /* Giúp hiệu ứng hiển thị mượt mà trên điện thoại */
+    background: transparent;
+}
 
-        .avatar-top {
-            width: 95px;
-            height: 95px;
-            border-radius: 50%;
-            margin: 0 auto 20px;
-            border: 4px solid #fff;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.15);
-        }
+.avatar-top img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* Nếu bạn muốn chính tấm ảnh đại diện cũng hơi trong suốt */
+    opacity: 0.9; 
+}
+.title {
+    color: #f01027;
+    font-size: 28px;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 0px #d3bc8e, 4px 4px 10px rgba(0,0,0,0.2);
+    -webkit-text-stroke: 0.5px #d3bc8e;
+}
 
-        /* CHỮ TRẮNG VIỀN CAM CHÁY - CỰC RÕ TRÊN NỀN CAM SÁNG */
-        .title {
-            color: #ffffff;
-            font-size: 30px;
-            font-weight: 900;
-            margin-bottom: 8px;
-            text-transform: uppercase;
-            /* Viền màu Cam Cháy (Burnt Orange) để nổi bật trên nền cam sáng */
-            -webkit-text-stroke: 1.8px #D35400; 
-            text-shadow: 3px 3px 0px #D35400, 5px 5px 15px rgba(0,0,0,0.2);
-            letter-spacing: 1px;
-        }
+.subtitle {
+    background: #ddcdcd; /* Nền vàng cho chữ BIO */
+    color: #da1553;
+    padding: 2px 15px;
+    border-radius: 20px;
+    display: inline-block;
+    font-size: 15px;
+    margin-bottom: 25px;
+}
+ .link-button {
+    display: block;
+    color: #5d4637; 
+    text-decoration: none;
+    margin: 15px 0;
+    padding: 14px 25px;
+    /* Bo tròn tối đa để tạo hình con nhộng cực đẹp */
+    border-radius: 50px; 
+    font-size: 16px;
+    font-weight: 800;
+    position: relative;
+    z-index: 1;
+    overflow: hidden; 
+    border: none;
+    text-transform: uppercase;
+    transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+}
 
-        .subtitle {
-            color: #ffffff;
-            font-size: 14px;
-            font-weight: 700;
-            margin-bottom: 35px;
-            -webkit-text-stroke: 0.6px #D35400;
-            text-shadow: 1px 1px 4px rgba(0,0,0,0.3);
-            letter-spacing: 0.5px;
-        }
+/* HIỆU ỨNG 1 SỢI MÀU CHẠY ĐUỔI NHAU */
+.link-button::before {
+    content: '';
+    position: absolute;
+    /* Làm vùng xoay thật lớn để sợi màu chạy mượt quanh đường cong */
+    top: -150%; 
+    left: -25%;
+    width: 150%;
+    height: 400%;
+    /* 1 sợi màu Pastel duy nhất chiếm 15% vòng tròn */
+    background: conic-gradient(
+        from 0deg,
+        #FFB6C1, #FFD700, #98FB98, #87CEFA, #DDA0DD, #FFB6C1,
+        transparent 15% 
+    );
+    animation: rotate-single 2.5s linear infinite;
+    z-index: -2;
+}
 
-        /* NÚT BẤM TÔNG CAM SANG TRỌNG */
-        .link-button {
-            display: block;
-            background: #ffffff;
-            color: #E67E22; /* Màu Cam Carrot sang trọng */
-            text-decoration: none;
-            margin: 15px 0;
-            padding: 16px;
-            border-radius: 20px;
-            font-size: 17px;
-            font-weight: 800;
-            border: 2.5px solid #E67E22;
-            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            text-transform: uppercase;
-        }
+/* LỚP NỀN Ô CHỌN (Bo tròn khớp với khung ngoài) */
+.link-button::after {
+    content: '';
+    position: absolute;
+    inset: 3px; /* Độ dày của sợi màu */
+    background: #f3f0f2;
+    border-radius: 50px; /* Phải trùng với border-radius ở trên */
+    z-index: -1;
+    transition: all 0.3s ease;
+}
 
-        /* Hiệu ứng khi bấm */
-        .link-button:active, .link-button:hover {
-            background: #E67E22;
-            color: #ffffff;
-            transform: scale(1.06);
-            box-shadow: 0 8px 20px rgba(230, 126, 34, 0.4);
-        }
+/* HIỆU ỨNG CHẠM DỊU MẮT */
+.link-button:hover, .link-button:active {
+    transform: scale(1.05);
+    color: #FF69B4;
+}
+
+.link-button:active::after {
+    /* Hiệu ứng loang màu nhẹ nhàng khi chạm, không bị chói */
+    background: linear-gradient(45deg, #FFF5F7, #FFF9E6, #F0F8FF);
+    filter: brightness(0.98);
+}
+
+/* ANIMATION */
+@keyframes rotate-single {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
 
         .social-icons {
             margin-top: 30px;
